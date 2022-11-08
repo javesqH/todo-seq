@@ -78,6 +78,17 @@ class UserServices {
             throw error;
          }
     }
+
+    static async update(updateData, id) {
+        try {
+            const result = await Users.update(updateData, {
+                where: {id}
+            });
+            return result;
+        } catch (error) {
+            throw error;
+        }
+    }
 }
 
 module.exports = UserServices;
